@@ -18,11 +18,13 @@ jobs:
     - name: cd
       run: cd vcpkg
     - name: run
-      run: sh ./bootstrap-vcpkg.sh # "./bootstrap-vcpkg.bat" for powershell
+      run: sh bootstrap-vcpkg.sh # "./bootstrap-vcpkg.bat" for powershell
     - name: intergrate install
-      run: ./vcpkg integrate install
+      run: vcpkg integrate install
     - name: install leptonica
-      run: ./vcpkg install leptonica
+      run: vcpkg install leptonica
+    - name: back
+      run: cd ..
     - name: Run autogen.sh
       run: sh autogen.sh
     - name: configure
