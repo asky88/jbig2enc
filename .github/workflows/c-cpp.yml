@@ -18,7 +18,7 @@ jobs:
     - name: cd
       run: cd vcpkg
     - name: run
-      run: ./bootstrap-vcpkg.sh # "./bootstrap-vcpkg.bat" for powershell
+      run: sh ./bootstrap-vcpkg.sh # "./bootstrap-vcpkg.bat" for powershell
     - name: intergrate install
       run: ./vcpkg integrate install
     - name: install leptonica
