@@ -13,6 +13,16 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - name: Clone
+      run: git clone https://github.com/Microsoft/vcpkg.git
+    - name: cd
+      run: cd vcpkg
+    - name: run
+      run: ./bootstrap-vcpkg.sh # "./bootstrap-vcpkg.bat" for powershell
+    - name: intergrate install
+      run: ./vcpkg integrate install
+    - name: install leptonica
+      run: ./vcpkg install leptonica
     - name: Run autogen.sh
       run: sh autogen.sh
     - name: configure
